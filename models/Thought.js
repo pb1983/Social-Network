@@ -1,5 +1,5 @@
-const { kMaxLength } = require('buffer');
 const {Schema, model} = require('mongoose');
+const Reaction = require('./Reaction')
 const dayjs = require('dayjs');
 
 const thoughtSchema = new Schema ({
@@ -18,23 +18,24 @@ const thoughtSchema = new Schema ({
         type: String,
         required: true,
     },
-    reactions: [reactionSchema],
+    reactions: [Reaction],
     
 },
 {
     toJSON: {
       virtuals: true,
     },
+    id: false,
   }
 );
 
 
-thoughtSchema.methods.timestampFormat = function () {
+thoughtSchema.methods.timeStampFormat = function () {
     this.createdAt = dayjs().format('MM/DD/YYYY:hh/mm/ss'); 
 
 }
 
-userSchema.virtual('reactionCount').get(function () {
+thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 })
 
