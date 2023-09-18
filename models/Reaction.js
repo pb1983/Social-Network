@@ -21,6 +21,7 @@ const reactionSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        get: (date) => dayjs(date).format('MM/DD/YYYY hh:mm:ss')
     },
 },
     {
@@ -29,12 +30,12 @@ const reactionSchema = new Schema({
         },
         id: false,
     }
-)
+);
+
+reactionSchema.virtual('reactionCount').get(function () {
+    return this.reactionId.length;
+})
 
 
-reactionSchema.methods.timeStampFormat = function () {
-    this.createdAt = dayjs().format('MM/DD/YYYY:hh/mm/ss');
-
-}
 
 module.exports = reactionSchema;

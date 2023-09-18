@@ -13,6 +13,8 @@ const thoughtSchema = new Schema ({
     createdAt: {
         type: Date,
         default: Date.now,
+        get: (date) => dayjs(date).format('MM/DD/YYYY hh:mm:ss')
+        
     },
     username: {
         type: String,
@@ -24,16 +26,16 @@ const thoughtSchema = new Schema ({
 {
     toJSON: {
       virtuals: true,
+      getters: true,
     },
     id: false,
   }
 );
 
 
-thoughtSchema.methods.timeStampFormat = function () {
-    this.createdAt = dayjs().format('MM/DD/YYYY:hh/mm/ss'); 
 
-}
+
+
 
 thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
