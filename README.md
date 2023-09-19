@@ -7,7 +7,7 @@
 
 ## Description
 
-  This project simulates the routing relationships of a social networking platform by utlizing a NoSQL database. Using embedded and sub-document population, different models and schemas are able to reference each other to produce a cohesive compilation of user's thoughts, thought reactions, and friends within their respective network. All routes are tested using Insomnia to ensure that each data element can be created, updated, read, and deleted (CRUD).
+  This project simulates the routing relationships of a social networking platform by utilizing a NoSQL database. Using embedded and sub-document population, different models and schemas are able to reference each other to produce a cohesive compilation of user's thoughts, thought reactions, and friends within their respective network. All routes are tested using Insomnia to ensure that each data element can be created, updated, read, and deleted (CRUD).
 
 ## Installation
 
@@ -28,4 +28,4 @@
 
 [Repository](https://github.com/pb1983/Social-Network)
 
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/1G7_u7y81_6NCCbg7tRAGhstb6rtgjDP0/view)
